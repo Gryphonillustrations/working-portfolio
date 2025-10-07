@@ -11,22 +11,14 @@
     // page features setup
     //setupTheme(globalTagTheme);
     var hasSave = loadSavePoint();
-    setupButtons(hasSave);
+    //setupButtons(hasSave);
 
 
     // Set initial save point
     savePoint = story.state.toJson();
-    if (hasAchievements) {
-        displayPrevAchs();
-    }
 
-    if (hasSave) {
-        loadOrRestart();
-    } else {
-        // Kick off the start of the story!
-        continueStory(true);
-    }
-
+    // Kick off the start of the story!
+    continueStory(true);
 
     // Main story processing function. Each time this is called it generates
     // all the next content up as far as the next set of choices.
