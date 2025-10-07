@@ -27,7 +27,7 @@
         var delay = 0.0;
 
         // Don't over-scroll past new content
-        //var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
+        var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
 
         //if (firstTime == false) {
             //document.getElementById("headertop").style.display = none
@@ -322,7 +322,7 @@
         requestAnimationFrame(step);
     }
 
-
+*/
     // The Y coordinate of the bottom end of all the story content, used
     // for growing the container, and deciding how far to scroll.
     function contentBottomEdgeY() {
@@ -332,7 +332,7 @@
         return bottomElement ? bottomElement.offsetTop + bottomElement.offsetHeight + 20 : 0;
 
     }
-*/
+
 
 
     // Remove all elements that match the given selector. Used for removing choices after
