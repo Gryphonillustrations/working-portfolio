@@ -17,8 +17,9 @@ img {
     padding-top:2.5em;
 }
 
-.goback {
+.goback a {
   text-align: center;
+  color: white;
 }
 
 .outer {
