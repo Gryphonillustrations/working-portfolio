@@ -1,18 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ken Ackerman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
+    <div id="backdrop" class="backdrop">
+        <div class="blur">
+            <div class="outer">
 
-  <div id="backdrop" class="backdrop">
-    <div class="outercontainer">
-      <div class="papermain">
-        <div class="papertext"> 
-          <h1>Welcome!</h1>
+                <div id="controls" class="buttons">
+                    <a id="rewind" title="Restart story from beginning">restart</a>
+                    <a id="save" title="Save progress">save</a>
+                    <a id="reload" title="Reload from save point">load</a>
+                    <a id="theme-switch" title="Switch theme">theme</a>
+                </div>
+
+                <div class="papermain">
+            
+                    <div class="papertext"> 
+                    <div id="story" class="container">
+
+                    </div>
+                    </div>
+                    <img class="img100" src="https://media.discordapp.net/attachments/809959301669978152/1424818165115781242/bigPapershadow.png?ex=68e554d2&is=68e40352&hm=09d8370be80bcdc705b20c1b561f3ecf5af01ff7800fb4ea7e16bf9852e51be9&=&">
+                    <div class="banjo">
+                        <img class="img100" src="https://media.discordapp.net/attachments/809959301669978152/1424837084924870676/banjotranspdrawpaper.png?ex=68e56671&is=68e414f1&hm=78e6cf3ae42ab7bf1b7e3c466a3c3cd8d72a2aa9c950d6ee8601cef3ce9209be&=&">
+                    </div>
+                </div>
+            </div>
         </div>
-        <img class="img100" src="none">
-        <div class="banjo">
-          <img class="img100" src="none">
-        </div>
-      </div>
     </div>
-  </div>
 
+    <script src="ink.js"></script>
+    <script src="portfolioInk.js"></script>
+    <script src="main.js"></script>
 </body>
+</html>
+
+
+
+  
+    
