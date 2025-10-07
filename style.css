@@ -205,11 +205,11 @@ img {
     max-width: 100%;
 }
 
-.container .hide, .additionals .hide {
+.container .hide, .additional-sections .hide {
     opacity: 0.0;
 }
 
-.container .invisible, .additionals .invisible {
+.container .invisible, .additional-sections .invisible {
     display: none;
 }
 
