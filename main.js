@@ -203,7 +203,7 @@
 
             // Click on choice
             if(isClickable){
-                var choiceAnchorEl = choiceParagraphElement.querySelectorAll("a")[0];
+                var choiceAnchorEl = choiceEl.querySelectorAll("a")[0];
                 choiceAnchorEl.addEventListener("click", function(event) {
 
                     // Don't follow <a> link
