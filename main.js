@@ -125,6 +125,7 @@
             // Create paragraph element (initially hidden)
             var paragraphElement = document.createElement('p');
             paragraphElement.innerHTML = paragraphText;
+            paragraphElement.classList.add("inktext");
             storyContainer.appendChild(paragraphElement);
 
             // Add any custom classes derived from ink tags
@@ -195,7 +196,7 @@
 
                     // Remove all existing choices
                     removeAll(".choice");
-                    removeAll(".p")
+                    removeAll(".inktext")
 
                     // Tell the story where to go next
                     story.ChooseChoiceIndex(choice.index);
