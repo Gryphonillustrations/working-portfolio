@@ -2,6 +2,7 @@ img {
     display: block;
 }
 
+
 .backdrop {
     background-image: url("https://media.discordapp.net/attachments/809959301669978152/1424939646693015642/weepingquicksmall.png?ex=68e5c5f5&is=68e47475&hm=31e3664ee2299f186c51abe37c7986050963e0ffd8f19f1a05c561b17beb8b00&=&");
     height: 100%;
@@ -57,13 +58,14 @@ img {
 ///below is ink files
 
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: lighter;
     background: white;
     overflow: hidden;
+    margin: 0;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
