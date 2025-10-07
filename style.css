@@ -13,6 +13,7 @@ img {
 }
 
 .outer {
+  overflow: scroll;
   text-align: center;
   background-color: black;
   max-width: 88%;
