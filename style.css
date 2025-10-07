@@ -59,7 +59,6 @@ img {
 }
 
 
-
 /* Inky: */
 
 body {
@@ -203,11 +202,11 @@ img {
     max-width: 100%;
 }
 
-.container .hide {
+.container .hide, .additionals .hide {
     opacity: 0.0;
 }
 
-.container .invisible {
+.container .invisible, .additionals .invisible {
     display: none;
 }
 
