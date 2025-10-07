@@ -234,6 +234,7 @@
 
                     // Tell the story where to go next
                     story.ChooseChoiceIndex(choice.index);
+                    console.log(choice.index)
 
                     // This is where the save button will save from
                     savePoint = story.state.toJson();
