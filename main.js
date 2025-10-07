@@ -221,11 +221,9 @@
 
                     if (section == "default" || isBack) {
                         console.log(`hiding all additional sections!`)
-                        let additionalEls = document.getElementById("additionals").children
+                        let additionalEls = document.getElementById("additional-sections").children
                         for (let i=0; i<additionalEls.length; i++) {
-                            if (!additionalEls[i].classList.includes("hide")) {
-                                additionalEls[i].classList.add("hide");
-                            }
+                            additionalEls[i].classList.add("hide");
                         }
                     } else {
                         try {
