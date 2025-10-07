@@ -165,6 +165,8 @@
                 }
             }
 
+            var choiceEl;
+
             if (choice.text.includes("back")) {
                 isBack = true;
                 console.log("found the back button!")
@@ -175,8 +177,9 @@
                     showAfter(delay, backEl);
                     delay += 200.0;
                 }
-                backEl.innerHTML = `<a href='#'>${choice.text}</a>`
-                console.log("back button established???")
+                backEl.innerHTML = `<a href='#'>${choice.text}</a>`;
+                console.log("back button established???");
+                choiceEl = backEl;
             } else {
                 console.log("this is NOT the back button, it's " + choice.text)
                 var choiceParagraphElement = document.createElement('p');
@@ -195,6 +198,7 @@
                 // Fade choice in after a short delay
                 showAfter(delay, choiceParagraphElement);
                 delay += 200.0;
+                choiceEl = choiceParagraphElement;
             }
 
             // Click on choice
