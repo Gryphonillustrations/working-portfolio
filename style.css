@@ -53,12 +53,13 @@ img {
   margin-left: -10%;
 }
 
+
+
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
-    background: white;
     overflow: hidden;
 }
 
@@ -77,12 +78,12 @@ h2 {
 }
 
 h1 {
-    font-size: 30pt;
+    font-size: 28pt;
     margin-bottom: 10px;
 }
 
 h2 {
-    font-size: 14pt;
+    font-size: 20pt;
     font-style: italic;
     font-family: "Raleway";
     font-weight: lighter;
@@ -233,7 +234,7 @@ img {
 */
 
 .choice a, .choice span {
-    font-size: 24pt;
+    font-size: 18pt;
 }
 
 
