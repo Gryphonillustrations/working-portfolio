@@ -5,6 +5,8 @@
 
     var savePoint = "";
 
+    var activeSection = undefined;
+
     var storyContainer = document.querySelector('#story');
     //var outerScrollContainer = document.querySelector('.outerContainer');
 
@@ -126,7 +128,6 @@
             var paragraphElement = document.createElement('p');
             paragraphElement.innerHTML = paragraphText;
             paragraphElement.classList.add("inktext");
-			console.log("added class to p")
             storyContainer.appendChild(paragraphElement);
 
             // Add any custom classes derived from ink tags
@@ -144,43 +145,56 @@
             // Create paragraph with anchor element
             var choiceTags = choice.tags;
             var customClasses = [];
+            var section = "";
             var isClickable = true;
+            var isBack = false;
             for(var i=0; i<choiceTags.length; i++) {
                 var choiceTag = choiceTags[i];
                 var splitTag = splitPropertyTag(choiceTag);
 				splitTag.property = splitTag.property.toUpperCase();
 
                 if(choiceTag.toUpperCase() == "UNCLICKABLE"){
-                    isClickable = false
+                    isClickable = false;
                 }
 
                 if( splitTag && splitTag.property == "CLASS" ) {
                     customClasses.push(splitTag.val);
                 }
+                if( splitTag && splitTag.property == "SECTION" ) {
+                    section = splitTag.val;
+                } 
+                if (choice.text.includes("go back")) {
+                    isBack = true;
+                }
 
             }
 
-            
-            var choiceParagraphElement = document.createElement('p');
-            choiceParagraphElement.classList.add("choice");
+            if (isBack) {
+                var backEl = document.getElementById("goback");
+                if (!backEl.innerText.includes("go")) {
+                    showAfter(delay, backEl);
+                    delay += 200.0;
+                }
+                backEl.classList.add("choice");
+                backEl.innerHTML = `<a href='#'>${choice.text}</a>`
+            } else {
+                var choiceParagraphElement = document.createElement('p');
+                choiceParagraphElement.classList.add("choice");
 
-            for(var i=0; i<customClasses.length; i++)
-                choiceParagraphElement.classList.add(customClasses[i]);
+                for(var i=0; i<customClasses.length; i++)
+                    choiceParagraphElement.classList.add(customClasses[i]);
 
-            if(isClickable){
-                choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`
-            }else{
-                choiceParagraphElement.innerHTML = `<span class='unclickable'>${choice.text}</span>`
+                if(isClickable){
+                    choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`
+                }else{
+                    choiceParagraphElement.innerHTML = `<span class='unclickable'>${choice.text}</span>`
+                }
+                storyContainer.appendChild(choiceParagraphElement);
+
+                // Fade choice in after a short delay
+                showAfter(delay, choiceParagraphElement);
+                delay += 200.0;
             }
-            storyContainer.appendChild(choiceParagraphElement);
-
-            // Fade choice in after a short delay
-            showAfter(delay, choiceParagraphElement);
-            delay += 200.0;
-
-
-
-
 
             // Click on choice
             if(isClickable){
@@ -193,11 +207,30 @@
                     // Extend height to fit
                     // We do this manually so that removing elements and creating new ones doesn't
                     // cause the height (and therefore scroll) to jump backwards temporarily.
-                    storyContainer.style.height = contentBottomEdgeY()+"px";
+                        //storyContainer.style.height = contentBottomEdgeY()+"px";
 
                     // Remove all existing choices
                     removeAll(".choice");
-                    removeAll(".inktext")
+                    // Clear prev Ink-generated text as well
+                    removeAll(".inktext");
+                    if (section == "default" || isBack) {
+                        console.log(`hiding all additional sections!`)
+                        let additionalEls = document.getElementById("additionals").children
+                        for (let i=0; i<additionalEls.length; i++) {
+                            if (!additionalEls[i].classList.includes("hide")) {
+                                additionalEls[i].classList.add("hide");
+                            }
+                        }
+                    }
+                    try {
+                        console.log(`getting the ` + section + ` section!`)
+                        var sectionEl = document.getElementById(section)
+                        console.log(sectionEl)
+                        showAfter(sectionEl, delay += 200.0)
+                    }
+                    catch {
+                        console.log("no section specified???")
+                    }
 
                     // Tell the story where to go next
                     story.ChooseChoiceIndex(choice.index);
@@ -213,6 +246,7 @@
 
 		// Unset storyContainer's height, allowing it to resize itself
 		storyContainer.style.height = "";
+
 
 		//make em have our images that alternate <3
 		let choiceElementList = document.getElementsByClassName("choice")
