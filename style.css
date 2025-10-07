@@ -1,5 +1,6 @@
 img {
     display: block;
+    pointer-events: none;
 }
 
 .backdrop {
@@ -10,6 +11,10 @@ img {
 .blur {
   height: 100%;
   backdrop-filter: blur(4px);
+}
+
+.backspace {
+    padding-top:2.5em;
 }
 
 .outer {
@@ -25,6 +30,7 @@ img {
   display: inline-block;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 1em;
   width: 100%;
   max-width: 910px;
 }
@@ -52,11 +58,14 @@ img {
   margin-left: -10%;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+/* Inky: */
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: lighter;
+    margin: 0;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -69,7 +78,7 @@ h1,
 h2,
 h3 {
     text-align: center;
-    font-family: "Raleway";
+    font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -87,7 +96,7 @@ h2 {
 h3 {
     font-size: 20pt;
     font-style: italic;
-    font-family: "Raleway";
+    font-family: "Raleway", sans-serif;
     font-weight: lighter;
     color: #312424;
 }
@@ -148,7 +157,7 @@ h3 {
 
 p {
     font-family: "Raleway";
-    font-size: 20pt;
+    font-size: 18pt;
     color: #130e0c;
     line-height: 1.1em;
 }
@@ -156,14 +165,12 @@ p {
 a {
     font-weight: 300;
     color: #130e0c;
-    font-family: sans-serif;
     text-decoration: none;
 }
 
 .unclickable {
     font-weight: 300;
     color: #5f5f5f;
-    font-family: sans-serif;
     text-decoration: none;
     cursor: not-allowed;
 }
@@ -172,6 +179,7 @@ a:hover {
     /*color: rgb(0, 0, 0);*/
     font-weight: 700;
     font-style: italic;
+    text-align: center;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
