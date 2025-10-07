@@ -15,7 +15,6 @@ img {
 .outer {
   overflow: scroll;
   text-align: center;
-  background-color: black;
   max-width: 88%;
   margin-right: auto;
   margin-left: auto;
@@ -53,14 +52,11 @@ img {
   margin-left: -10%;
 }
 
-
-
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
-    overflow: hidden;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -70,7 +66,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     text-align: center;
     font-family: "Raleway";
     margin: 0;
@@ -78,16 +75,21 @@ h2 {
 }
 
 h1 {
-    font-size: 28pt;
+    font-size: 32pt;
     margin-bottom: 10px;
 }
 
 h2 {
+    font-size: 28pt;
+    margin-bottom: 6px;
+}
+
+h3 {
     font-size: 20pt;
     font-style: italic;
     font-family: "Raleway";
     font-weight: lighter;
-    color: #BBB;
+    color: #312424;
 }
 
 .header {
