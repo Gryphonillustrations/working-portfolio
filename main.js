@@ -219,21 +219,22 @@
                     // Clear prev Ink-generated text as well
                     removeAll(".inktext");
 
-                    if (section == "default" || isBack) {
+                    if (section == "default" || isBack || section == "") {
                         console.log(`hiding all additional sections!`)
                         let additionalEls = document.getElementById("additional-sections").children
                         for (let i=0; i<additionalEls.length; i++) {
                             additionalEls[i].classList.add("hide");
+                            choiceEl.innerHTML = ""
                         }
                     } else {
                         try {
-                            console.log(`getting the ` + section + ` section!`)
-                            var sectionEl = document.getElementById(section)
-                            console.log(sectionEl)
-                            showAfter(sectionEl, delay += 200.0)
+                            console.log(`getting the ` + section + ` section!`);
+                            var sectionEl = document.getElementById(section);
+                            console.log(sectionEl);
+                            showAfter(sectionEl, delay += 200.0);
                         }
                         catch {
-                            console.log("no section specified???")
+                            console.log("no section specified???");
                     }
                     }
 
