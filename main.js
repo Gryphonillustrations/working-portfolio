@@ -6,12 +6,10 @@
     var savePoint = "";
 
     var storyContainer = document.querySelector('#story');
-    var outerScrollContainer = document.querySelector('.outerContainer');
+    //var outerScrollContainer = document.querySelector('.outerContainer');
 
     // page features setup
     //setupTheme(globalTagTheme);
-    var hasAchievements = loadPrevAchs();
-    console.log(hasAchievements + ' about the achievements...')
     var hasSave = loadSavePoint();
     setupButtons(hasSave);
 
@@ -37,7 +35,7 @@
         var delay = 0.0;
 
         // Don't over-scroll past new content
-        var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
+        //var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
 
         //if (firstTime == false) {
             //document.getElementById("headertop").style.display = none
