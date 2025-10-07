@@ -217,21 +217,18 @@
                     removeAll(".inktext");
 
                     if (section == "default" || isBack || section == "") {
-                        console.log(`hiding all additional sections!`)
                         let additionalEls = document.getElementById("additional-sections").children
                         for (let i=0; i<additionalEls.length; i++) {
                             additionalEls[i].classList.add("hide");
-                            choiceEl.innerHTML = ""
+                            choiceEl.innerHTML = "<br>"
                         }
                     } else {
                         try {
-                            console.log(`getting the ` + section + ` section!`);
                             var sectionEl = document.getElementById(section);
                             console.log(sectionEl);
                             showAfter(delay, sectionEl);
                         }
                         catch {
-                            console.log("no section specified???");
                     }
                     }
 
