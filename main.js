@@ -126,6 +126,7 @@
             var paragraphElement = document.createElement('p');
             paragraphElement.innerHTML = paragraphText;
             paragraphElement.classList.add("inktext");
+			console.log("added class to p")
             storyContainer.appendChild(paragraphElement);
 
             // Add any custom classes derived from ink tags
