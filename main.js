@@ -148,6 +148,7 @@
             var section = "";
             var isClickable = true;
             var isBack = false;
+
             for(var i=0; i<choiceTags.length; i++) {
                 var choiceTag = choiceTags[i];
                 var splitTag = splitPropertyTag(choiceTag);
@@ -156,28 +157,28 @@
                 if(choiceTag.toUpperCase() == "UNCLICKABLE"){
                     isClickable = false;
                 }
-
                 if( splitTag && splitTag.property == "CLASS" ) {
                     customClasses.push(splitTag.val);
                 }
                 if( splitTag && splitTag.property == "SECTION" ) {
                     section = splitTag.val;
-                } 
-                if (choice.text.includes("go back")) {
-                    isBack = true;
                 }
-
             }
 
+            if (choice.text.includes("back")) {
+                isBack = true;
+                console.log("found the back button!")
+            }
             if (isBack) {
                 var backEl = document.getElementById("goback");
                 if (!backEl.innerText.includes("go")) {
                     showAfter(delay, backEl);
                     delay += 200.0;
                 }
-                backEl.classList.add("choice");
                 backEl.innerHTML = `<a href='#'>${choice.text}</a>`
+                console.log("back button established???")
             } else {
+                console.log("this is NOT the back button, it's " + choice.text)
                 var choiceParagraphElement = document.createElement('p');
                 choiceParagraphElement.classList.add("choice");
 
@@ -213,6 +214,7 @@
                     removeAll(".choice");
                     // Clear prev Ink-generated text as well
                     removeAll(".inktext");
+
                     if (section == "default" || isBack) {
                         console.log(`hiding all additional sections!`)
                         let additionalEls = document.getElementById("additionals").children
@@ -221,15 +223,16 @@
                                 additionalEls[i].classList.add("hide");
                             }
                         }
+                    } else {
+                        try {
+                            console.log(`getting the ` + section + ` section!`)
+                            var sectionEl = document.getElementById(section)
+                            console.log(sectionEl)
+                            showAfter(sectionEl, delay += 200.0)
+                        }
+                        catch {
+                            console.log("no section specified???")
                     }
-                    try {
-                        console.log(`getting the ` + section + ` section!`)
-                        var sectionEl = document.getElementById(section)
-                        console.log(sectionEl)
-                        showAfter(sectionEl, delay += 200.0)
-                    }
-                    catch {
-                        console.log("no section specified???")
                     }
 
                     // Tell the story where to go next
