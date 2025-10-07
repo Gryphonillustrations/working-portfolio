@@ -169,19 +169,16 @@
 
             if (choice.text.includes("back")) {
                 isBack = true;
-                console.log("found the back button!")
             }
             if (isBack) {
                 var backEl = document.getElementById("goback");
-                if (!backEl.innerText.includes("go")) {
+                if (!backEl.innerText.includes("back")) {
                     showAfter(delay, backEl);
                     delay += 200.0;
                 }
                 backEl.innerHTML = `<a href='#'>${choice.text}</a>`;
-                console.log("back button established???");
                 choiceEl = backEl;
             } else {
-                console.log("this is NOT the back button, it's " + choice.text)
                 var choiceParagraphElement = document.createElement('p');
                 choiceParagraphElement.classList.add("choice");
 
@@ -231,7 +228,7 @@
                             console.log(`getting the ` + section + ` section!`);
                             var sectionEl = document.getElementById(section);
                             console.log(sectionEl);
-                            showAfter(sectionEl, delay += 200.0);
+                            showAfter(delay, sectionEl);
                         }
                         catch {
                             console.log("no section specified???");
@@ -294,21 +291,6 @@
 
         //outerScrollContainer.scrollTo(0, 0);
     }
-
-    function restartAtEnd() {
-        finalThread = document.getElementById('restartatend')
-        finalThread.addEventListener("click", function(event) {
-                    // Don't follow <a> link
-                    event.preventDefault();
-                    removeAll("p");
-                    removeAll("img");
-                    setVisible(".header", false);
-                    restart();
-                });
-
-        
-    }
-
 
 
     // -----------------------------------
