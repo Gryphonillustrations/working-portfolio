@@ -1,8 +1,20 @@
-.backdrop {
-    height: 100%;
+img {
+    display: block;
 }
-.outercontainer {
+
+.backdrop {
+    background-image: url("https://raw.githubusercontent.com/Gryphonillustrations/private-portfolio-images/refs/heads/main/weepingquicksmall.png?token=GHSAT0AAAAAADMTJS2PHFZ75KE7NYLLQNPQ2HEOIHA");
+    height: 100%;
+    background-size: cover;
+}
+.blur {
+  height: 100%;
+  backdrop-filter: blur(4px);
+}
+
+.outer {
   text-align: center;
+  background-color: black;
   max-width: 88%;
   margin-right: auto;
   margin-left: auto;
@@ -16,6 +28,11 @@
   width: 100%;
   max-width: 910px;
 }
+
+.img100 {
+  width: 100%;
+}
+
 .papertext {
   text-wrap: wrap;
   padding-top: 7%;
@@ -25,17 +42,12 @@
   display: block;
   width: 100%;
 }
-img {
-    display: block;
-}
-.img100 {
-  width: 100%;
-}
+
 .banjo {
   position: relative;
   transform: scaleX(-1);
   width: 30%;
   float: left;
   margin-top: -24%;
-  margin-left: -12%;
+  margin-left: -10%;
 }
