@@ -64,6 +64,18 @@ img {
 
 .additional-sections {
     position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    top: 16%;
+}
+
+.animreel {
+    position: absolute;
+    display: block;
+    top: 14%;
+    width: 80%;
 }
 
 
