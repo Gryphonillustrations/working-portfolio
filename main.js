@@ -219,13 +219,12 @@
                     if (section == "default" || isBack || section == "") {
                         let additionalEls = document.getElementById("additional-sections").children
                         for (let i=0; i<additionalEls.length; i++) {
-                            additionalEls[i].classList.add("hide");
+                            additionalEls[i].classList.add("invisible");
                             choiceEl.innerHTML = "<br>"
                         }
                     } else {
                         try {
                             var sectionEl = document.getElementById(section);
-                            console.log(sectionEl);
                             showAfter(delay, sectionEl);
                         }
                         catch {
@@ -302,6 +301,7 @@
 
     // Fades in an element after a specified delay
     function showAfter(delay, el) {
+
         if( isAnimationEnabled() ) {
             el.classList.add("hide");
             setTimeout(function() { el.classList.remove("hide") }, delay);
@@ -309,6 +309,7 @@
             // If the user doesn't want animations, show immediately
             el.classList.remove("hide");
         }
+        el.classList.remove("invisible")
     }
 
     /*
