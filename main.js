@@ -181,6 +181,7 @@
             } else {
                 var choiceParagraphElement = document.createElement('p');
                 choiceParagraphElement.classList.add("choice");
+                choiceParagraphElement.classList.add("notback");
 
                 for(var i=0; i<customClasses.length; i++)
                     choiceParagraphElement.classList.add(customClasses[i]);
@@ -225,7 +226,7 @@
                     } else {
                         try {
                             var sectionEl = document.getElementById(section);
-                            showAfter(delay, sectionEl);
+                            showAfter(200.0, sectionEl);
                         }
                         catch {
                     }
@@ -267,9 +268,9 @@
                     //console.log("alternat number is reset to " + alternateNum)
                 }
 
-                if (i == choiceElementList.length - 1) {
+                /*if (i == choiceElementList.length - 1) {
                     choiceElementList[i].className += " lastchoice"
-                }
+                }*/
             }
         }
 
