@@ -46,6 +46,8 @@ img {
     height: 60vw;
     overflow: clip;
     max-height: 736px;
+    display: block;
+    
 }
 
 .img100 {
@@ -60,6 +62,7 @@ img {
   position: absolute;
   display: block;
   width: 100%;
+  top: 0px;
 }
 
 .banjo {
@@ -98,7 +101,17 @@ img {
 
 .flexgrid {
     display: flex;
+    justify-content: center;
+}
 
+.flexcol {
+  flex: 1;
+  margin: 1%;
+  display: block;
+}
+
+.squarepaper {
+  max-width: 500px;
 }
 
 /* Inky: */
@@ -249,7 +262,7 @@ img {
     opacity: 0.0;
 }
 
-.container .invisible, .additional-sections .invisible {
+.invisible {
     display: none;
 }
 
