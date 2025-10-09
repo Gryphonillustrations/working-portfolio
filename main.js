@@ -220,7 +220,9 @@
                     if (section == "default" || isBack || section == "") {
                         //let additionalEls = addDivEl.children
                         for (let i=0; i<additionalSectionNames.length; i++) {
+                            console.log(additionalSectionNames[i]);
                             let additionalEl = document.getElementById(additionalSectionNames[i]);
+                            console.log(additionalEl);
                             additionalEl.classList.add("invisible");
                             //addDivEl.classList.add("invisible");
                             choiceEl.innerHTML = "<br>"
@@ -284,8 +286,7 @@
 
     let additionalSectionNames = [
         'animreel',
-        'paintings',
-        'digital'
+        'paintings'
     ]
 
 
