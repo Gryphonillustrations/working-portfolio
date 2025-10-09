@@ -26,8 +26,8 @@
     }
 
     var bigBgPaper = "https://media.discordapp.net/attachments/809959301669978152/1424818165115781242/bigPapershadow.png?ex=68e554d2&is=68e40352&hm=09d8370be80bcdc705b20c1b561f3ecf5af01ff7800fb4ea7e16bf9852e51be9&=&"
-    var lilBgPaper = "https://media.discordapp.net/attachments/809959301669978152/1425966794908241971/lilPapershadow.png?ex=68e98291&is=68e83111&hm=430441bfb70ac1813cfa038f5e4d20fb2683179f02e71f2aadb2219aa9c23597&=&"
-    // Kick off the start of the story!
+    var lilBgPaper = "https://media.discordapp.net/attachments/809959301669978152/1425995780900126720/lilPapershadow.png?ex=68e99d8f&is=68e84c0f&hm=1a0b688f23e7e846489aecc5f1472861524fecf4667e5f7d1e62b2c17fb6b4cb&=&"
+     // Kick off the start of the story!
     continueStory(true);
 
     // Main story processing function. Each time this is called it generates
