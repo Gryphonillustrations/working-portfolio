@@ -216,9 +216,9 @@
                     removeAll(".choice");
                     // Clear prev Ink-generated text as well
                     removeAll(".inktext");
-
+                    let addDivEl = document.getElementById("additional-sections")
                     if (section == "default" || isBack || section == "") {
-                        let addDivEl = document.getElementById("additional-sections")
+                        
                         let additionalEls = addDivEl.children
                         for (let i=0; i<additionalEls.length; i++) {
                             additionalEls[i].classList.add("invisible");
