@@ -19,6 +19,11 @@
     // Set initial save point
     savePoint = story.state.toJson();
 
+    var additionalSectionNames = [
+        'animreel',
+        'paintings'
+    ]
+
     // Kick off the start of the story!
     continueStory(true);
 
@@ -199,6 +204,10 @@
                 choiceEl = choiceParagraphElement;
             }
 
+
+
+
+
             // Click on choice
             if(isClickable){
                 var choiceAnchorEl = choiceEl.querySelectorAll("a")[0];
@@ -284,10 +293,7 @@
     }
 
 
-    let additionalSectionNames = [
-        'animreel',
-        'paintings'
-    ]
+
 
 
     function restart() {
