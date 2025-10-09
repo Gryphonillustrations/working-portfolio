@@ -90,6 +90,10 @@ img {
     margin-left: auto;
     font-size: 2vw;
     max-height: 740px;
+    height: 500px;
+    top: 9%;
+    position: absolute;
+    display: block;
     
 }
 
