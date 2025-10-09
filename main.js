@@ -246,6 +246,7 @@
                                 bgPaperEl.src = bigBgPaper
                             } else if (additionalSectionNames[section] == "lil") {
                                 bgPaperEl.src = lilBgPaper
+                            }
                         }
                         catch {
                     }
