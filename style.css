@@ -101,17 +101,17 @@ img {
 .paintings {
     width: 100%;
     position: absolute;
-    top: 15vw;
+    top: 21em;
     margin-left: -6%;
     display: block;
 }
 
 
-.grid {
-    /*display: flex;
-    justify-content: center;*/
+/*.grid {
+    display: flex;
+    justify-content: center;
     padding: 5%;
-}
+}*/
 
 .flexcol {
   flex: 1;
@@ -242,7 +242,6 @@ h3 {
 p {
     font-family: "Raleway";
     font-size: 18pt;
-    font-size: 1.8vw;
     color: #130e0c;
     line-height: 1.1em;
 }
