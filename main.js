@@ -216,20 +216,19 @@
                     removeAll(".choice");
                     // Clear prev Ink-generated text as well
                     removeAll(".inktext");
-                    let addDivEl = document.getElementById("additional-sections")
+                    //let addDivEl = document.getElementById("additional-sections")
                     if (section == "default" || isBack || section == "") {
-                        
-                        let additionalEls = addDivEl.children
-                        for (let i=0; i<additionalEls.length; i++) {
-                            additionalEls[i].classList.add("invisible");
-                            addDivEl.classList.add("invisible");
+                        //let additionalEls = addDivEl.children
+                        for (let i=0; i<additionalSectionNames.length; i++) {
+                            let additionalEl = document.getElementById(additionalSectionNames[i]);
+                            additionalEl.classList.add("invisible");
+                            //addDivEl.classList.add("invisible");
                             choiceEl.innerHTML = "<br>"
                         }
                     } else {
                         try {
                             var sectionEl = document.getElementById(section);
                             showAfter(200.0, sectionEl);
-                            showAfter(150.0, addDivEl);
                         }
                         catch {
                     }
@@ -281,6 +280,14 @@
 
 
     }
+
+
+    let additionalSectionNames = [
+        'animreel',
+        'paintings',
+        'digital'
+    ]
+
 
     function restart() {
         story.ResetState();
