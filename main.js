@@ -21,7 +21,8 @@
 
     var additionalSectionNames = [
         'animreel',
-        'paintings'
+        'paintings',
+        'digital'
     ]
 
     // Kick off the start of the story!
