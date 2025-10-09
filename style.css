@@ -102,13 +102,15 @@ img {
     width: 100%;
     position: absolute;
     top: 15vw;
-
+    margin-left: -6%;
+    display: block;
 }
 
 
-.flexgrid {
-    /*display: flex;*/
-    justify-content: center;
+.grid {
+    /*display: flex;
+    justify-content: center;*/
+    padding: 5%;
 }
 
 .flexcol {
