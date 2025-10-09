@@ -24,6 +24,7 @@
         'paintings': 'lil',
         'digital': 'lil'
     }
+
     var bigBgPaper = "https://media.discordapp.net/attachments/809959301669978152/1424818165115781242/bigPapershadow.png?ex=68e554d2&is=68e40352&hm=09d8370be80bcdc705b20c1b561f3ecf5af01ff7800fb4ea7e16bf9852e51be9&=&"
     var lilBgPaper = "https://media.discordapp.net/attachments/809959301669978152/1425966794908241971/lilPapershadow.png?ex=68e98291&is=68e83111&hm=430441bfb70ac1813cfa038f5e4d20fb2683179f02e71f2aadb2219aa9c23597&=&"
     // Kick off the start of the story!
@@ -236,7 +237,7 @@
                             let additionalEl = document.getElementById(sectNames[i]);
                             additionalEl.classList.add("invisible");
                             choiceEl.innerHTML = "<br>";
-                            bgPaperEl.src = "bigBgPaper";
+                            bgPaperEl.src = bigBgPaper;
                         }
                     } else {
                         try {
@@ -249,7 +250,7 @@
                             }
                         }
                         catch {
-                    }
+                        }
                     }
 
                     // Tell the story where to go next
