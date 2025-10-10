@@ -239,6 +239,7 @@
                             additionalEl.classList.add("invisible");
                             choiceEl.innerHTML = "<br>";
                             bgPaperEl.src = bigBgPaper;
+                            showAfter(0.0,document.getElementById("banjo"));
                         }
                     } else {
                         let optionalnakd = "";
