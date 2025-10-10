@@ -131,6 +131,18 @@ img {
   width: 50vw;
 }
 
+.long {
+  max-width: 325px;
+  display: inline-block;
+  width: 50vw;
+}
+
+.diamond {
+  max-width: 325px;
+  display: inline-block;
+  width: 50vw;
+}
+
 /*.squarepaper {
   width: 94%;
   margin-left: auto;
