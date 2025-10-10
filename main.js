@@ -196,9 +196,9 @@
                     choiceParagraphElement.classList.add(customClasses[i]);
 
                 if(isClickable){
-                    choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`;
+                    choiceParagraphElement.innerHTML = `<a href='#'>▷ ${choice.text}</a>`;
                 }else{
-                    choiceParagraphElement.innerHTML = `<span class='unclickable'>${choice.text}</span>`;
+                    choiceParagraphElement.innerHTML = `<span class='unclickable'>▷ ${choice.text}</span>`;
                 }
                 storyContainer.appendChild(choiceParagraphElement);
 
