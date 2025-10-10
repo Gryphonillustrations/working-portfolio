@@ -432,24 +432,24 @@ img {
 
 /* (min-width: 450px) and  */
 
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 1035px) {
     h2 {
-        font-size: 4vw;
+        font-size: 3.5vw;
     }
 
   .inktext {
-    font-size: 2.5vw;
+    font-size: 2.2vw;
       
   }
 
   .choice {
-    font-size: 2.5vw;
+    font-size: 2.2vw;
   }
     .choice a, .choice span {
-        font-size: 2.5vw;
+        font-size: 2.2vw;
     }
         .subtitle {
-        font-size: 1.8vw;
+        font-size: 1.6vw;
     }
   .paintings {
     top: auto;
@@ -459,22 +459,22 @@ img {
 
 @media screen and (max-width: 450px) {
     h2 {
-        font-size: 5vw;
+        font-size: 4.8vw;
     }
 
   .inktext {
-    font-size: 3.7vw;
+    font-size: 3.5vw;
       
   }
 
   .choice {
-    font-size: 3.7vw;
+    font-size: 3.5vw;
   }
     .choice a, .choice span {
-        font-size: 3.7vw;
+        font-size: 3.5vw;
     }
         .subtitle {
-        font-size: 2.8vw;
+        font-size: 2.5vw;
     }
   .paintings {
     top: auto;
