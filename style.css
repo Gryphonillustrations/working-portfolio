@@ -124,7 +124,7 @@ img {
 .paintings {
     width: 100%;
     position: absolute;
-    top: 56%;
+    top: 50%;
     margin-left: -6%;
     display: block;
 }
@@ -429,21 +429,54 @@ img {
 }
 
 
-@media screen and (max-width: 980px) {
+
+
+/* (min-width: 450px) and  */
+
+@media screen and (max-width: 910px) {
+    h2 {
+        font-size: 4vw;
+    }
+
+  .inktext {
+    font-size: 2.5vw;
+      
+  }
+
+  .choice {
+    font-size: 2.5vw;
+  }
+    .choice a, .choice span {
+        font-size: 2.5vw;
+    }
+        .subtitle {
+        font-size: 1.8vw;
+    }
   .paintings {
     top: auto;
   }
 }
 
-/* (min-width: 370px) and  */
 
-@media screen and (max-width: 650px) {
-  .p {
-    font-size: 10pt;
+@media screen and (max-width: 450px) {
+    h2 {
+        font-size: 4vw;
+    }
+
+  .inktext {
+    font-size: 2.5vw;
+      
   }
-  .choice a, .choice span {
-    font-size: 10pt;
+
+  .choice {
+    font-size: 2.5vw;
   }
+    .choice a, .choice span {
+        font-size: 2.5vw;
+    }
+        .subtitle {
+        font-size: 1.8vw;
+    }
   .paintings {
     top: auto;
   }
