@@ -4,10 +4,8 @@ img {
 }
 
 .backdrop {
-    background-image: url("https://media.discordapp.net/attachments/809959301669978152/1424939646693015642/weepingquicksmall.png?ex=68e5c5f5&is=68e47475&hm=31e3664ee2299f186c51abe37c7986050963e0ffd8f19f1a05c561b17beb8b00&=&");
-    height: 100%;
-    height: 100vh;
-    background-size: cover;
+    position: fixed;
+    width: 100%;
 }
 .blur {
   height: 100%;
@@ -119,7 +117,7 @@ img {
 
 .flexcol {
   flex: 1;
-  margin: 1.5%;
+  margin: 0.5%;
   /*display: block;
   overflow: clip;*/
 }
