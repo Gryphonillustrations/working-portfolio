@@ -20,10 +20,10 @@
     savePoint = story.state.toJson();
 
     var additionalSectionNames = {
-        'animreel': 'big',
+        'animreel': 'stay',
         'paintings': 'big',
         'digital': 'big',
-        'lifedrawing': 'big'
+        'lifedrawing': 'stay'
     };
 
     var bigBgPaper = "images/bigbgpaper.png";
@@ -252,7 +252,7 @@
                                 additionalEl.classList.add("invisible");
                                 choiceEl.innerHTML = "<br>";
                             } catch{}
-                            bgPaperEl.src = bigBgPaper;
+                            setMobilePaper(windowWidth, additionalSectionNames[section])
                             showAfter(0.0,document.getElementById("banjo"));
                         }
                     } else {
@@ -264,16 +264,9 @@
                         }
                         try {
                             var sectionEl = document.getElementById(section);
+                            setMobilePaper(windowWidth, additionalSectionNames[section])
                             showAfter(200.0, sectionEl);
-                            if (additionalSectionNames[section] == "big") {
-                                bgPaperEl.src = bigBgPaper;
-                                showAfter(100.0,document.getElementById("banjo"));
-                            } else if (additionalSectionNames[section] == "lil") {
-                                bgPaperEl.src = lilBgPaper;
-                                document.getElementById("banjo").classList.add('invisible');
-                            }
-
-
+                            
                             if (optionalnakd == 'nothx') {
                                 let nakdPics = document.getElementsByClassName('nakd');
                                 for (let i=0; i< nakdPics.length; i++) {
@@ -503,13 +496,15 @@
     }
 */
 
-    function setMobilePaper(windowWidth) {
-        if (windowWidth.matches) {
-
+    function setMobilePaper(windowWidth, paperSize) {
+        if (paperSize == "sticky") {
+            document.getElementById("bgpaper").src = bigBgPaper;
+        } else if (windowWidth.matches) {
             document.getElementById("bgpaper").src = tallBgPaper;
         } else {
             document.getElementById("bgpaper").src = bigBgPaper;
         }
+        //document.getElementById("banjo").classList.add('invisible');
     }
 
     // Loads save state if exists in the browser memory
