@@ -22,7 +22,8 @@
     var additionalSectionNames = {
         'animreel': 'big',
         'paintings': 'lil',
-        'digital': 'lil'
+        'digital': 'lil',
+        'lifedrawing': 'lil'
     }
 
     var bigBgPaper = "https://media.discordapp.net/attachments/809959301669978152/1424818165115781242/bigPapershadow.png?ex=68e554d2&is=68e40352&hm=09d8370be80bcdc705b20c1b561f3ecf5af01ff7800fb4ea7e16bf9852e51be9&=&"
