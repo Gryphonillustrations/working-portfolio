@@ -252,9 +252,13 @@
                             showAfter(200.0, sectionEl);
                             if (additionalSectionNames[section] == "big") {
                                 bgPaperEl.src = bigBgPaper;
+                                showAfter(100.0,document.getElementById("banjo"));
                             } else if (additionalSectionNames[section] == "lil") {
                                 bgPaperEl.src = lilBgPaper;
+                                document.getElementById("banjo").classList.add('invisible');
                             }
+
+
                             if (optionalnakd == 'nothx') {
                                 let nakdPics = document.getElementsByClassName('nakd');
                                 for (let i=0; i< nakdPics.length; i++) {
