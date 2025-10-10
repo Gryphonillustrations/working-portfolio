@@ -1,23 +1,5 @@
 
-@media (max-width: 980px) {
-  .paintings {
-    top: 0px;
-  }
-}
 
-/* (min-width: 370px) and  */
-
-@media only screen and (max-width: 650px) {
-  .p {
-    font-size: 10pt;
-  }
-  .choice a, .choice span {
-    font-size: 10pt;
-  }
-  .paintings {
-    top: auto;
-  }
-}
 
 img {
     display: block;
@@ -444,4 +426,25 @@ img {
         left: 0;
         right: 0;
     }
+}
+
+
+@media screen and (max-width: 980px) {
+  .paintings {
+    top: auto;
+  }
+}
+
+/* (min-width: 370px) and  */
+
+@media screen and (max-width: 650px) {
+  .p {
+    font-size: 10pt;
+  }
+  .choice a, .choice span {
+    font-size: 10pt;
+  }
+  .paintings {
+    top: auto;
+  }
 }
