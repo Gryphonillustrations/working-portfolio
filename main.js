@@ -21,13 +21,13 @@
 
     var additionalSectionNames = {
         'animreel': 'big',
-        'paintings': 'lil',
+        'paintings': 'big',
         'digital': 'lil',
         'lifedrawing': 'lil'
     }
 
-    var bigBgPaper = "https://media.discordapp.net/attachments/809959301669978152/1424818165115781242/bigPapershadow.png?ex=68e554d2&is=68e40352&hm=09d8370be80bcdc705b20c1b561f3ecf5af01ff7800fb4ea7e16bf9852e51be9&=&"
-    var lilBgPaper = "https://media.discordapp.net/attachments/809959301669978152/1425995780900126720/lilPapershadow.png?ex=68e99d8f&is=68e84c0f&hm=1a0b688f23e7e846489aecc5f1472861524fecf4667e5f7d1e62b2c17fb6b4cb&=&"
+    var bigBgPaper = "images/bigbgpaper.png"
+    var lilBgPaper = "images/lilbgpaper.png"
      // Kick off the start of the story!
     continueStory(true);
 
@@ -244,7 +244,7 @@
                     } else {
                         let optionalnakd = "";
                         if (section.includes("lifedrawing")) {
-                            optionalnakd = section.substring(10);
+                            optionalnakd = section.substring(11);
                             console.log(optionalnakd);
                             section = "lifedrawing";
                         }
