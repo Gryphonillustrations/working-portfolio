@@ -292,7 +292,7 @@ h3 {
 
 p {
     font-family: "Raleway";
-    font-size: 17pt;
+    font-size: 16pt;
     color: #524844;
     line-height: 1.1em;
 }
@@ -385,7 +385,7 @@ img {
 }
 
 .choice a, .choice span {
-    font-size: 18pt;
+    font-size: 16pt;
     /*font-size: 1.8vw;*/
 }
 
@@ -438,15 +438,15 @@ img {
     }
 
   .inktext {
-    font-size: 2.2vw;
+    font-size: 2vw;
       
   }
 
   .choice {
-    font-size: 2.2vw;
+    font-size: 2vw;
   }
     .choice a, .choice span {
-        font-size: 2.2vw;
+        font-size: 2vw;
     }
         .subtitle {
         font-size: 1.6vw;
@@ -457,7 +457,7 @@ img {
 }
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
     h2 {
         font-size: 4.8vw;
     }
