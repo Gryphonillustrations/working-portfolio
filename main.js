@@ -22,12 +22,24 @@
     var additionalSectionNames = {
         'animreel': 'big',
         'paintings': 'big',
-        'digital': 'lil',
-        'lifedrawing': 'lil'
-    }
+        'digital': 'big',
+        'lifedrawing': 'big'
+    };
 
-    var bigBgPaper = "images/bigbgpaper.png"
-    var lilBgPaper = "images/lilbgpaper.png"
+    var bigBgPaper = "images/bigbgpaper.png";
+    var lilBgPaper = "images/lilbgpaper.png";
+    var tallBgPaper = "images/tallbgpaper.png";
+
+    var windowWidth = window.matchMedia("(max-width: 700px)");
+
+    setMobilePaper(windowWidth);
+
+    windowWidth.addEventListener("change", function() {
+        setMobilePaper(windowWidth);
+    })
+
+
+
      // Kick off the start of the story!
     continueStory(true);
 
@@ -491,6 +503,14 @@
     }
 */
 
+    function setMobilePaper(windowWidth) {
+        if (windowWidth.matches) {
+
+            document.getElementById("bgpaper").src = tallBgPaper;
+        } else {
+            document.getElementById("bgpaper").src = bigBgPaper;
+        }
+    }
 
     // Loads save state if exists in the browser memory
     function loadSavePoint() {
