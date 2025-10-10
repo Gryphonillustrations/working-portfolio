@@ -156,11 +156,11 @@ img {
     display: block;
 }
 
-/*.grid {
+.flex-grid {
     display: flex;
     justify-content: center;
-    padding: 5%;
-}*/
+    padding: 4%;
+}
 
 .flexcol {
   flex: 1;
