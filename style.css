@@ -125,22 +125,23 @@ img {
 }
 
 .square {
-  max-width: 325px;
-  height: 52%;
+  max-width: 375px;
   display: inline-block;
-  width: 50vw;
+  width: 85vw;
 }
 
 .long {
-  max-width: 325px;
+  max-width: 700px;
   display: inline-block;
-  width: 50vw;
+  width: 85vw;
 }
 
 .diamond {
-  max-width: 325px;
+  max-width: 475px;
   display: inline-block;
-  width: 50vw;
+  width: 98vw;
+  margin-left: -2vw;
+  margin-right: -2vw;
 }
 
 /*.squarepaper {
