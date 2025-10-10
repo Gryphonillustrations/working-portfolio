@@ -196,9 +196,9 @@
                     choiceParagraphElement.classList.add(customClasses[i]);
 
                 if(isClickable){
-                    choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`
+                    choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`;
                 }else{
-                    choiceParagraphElement.innerHTML = `<span class='unclickable'>${choice.text}</span>`
+                    choiceParagraphElement.innerHTML = `<span class='unclickable'>${choice.text}</span>`;
                 }
                 storyContainer.appendChild(choiceParagraphElement);
 
@@ -219,7 +219,7 @@
 
                     // Don't follow <a> link
                     event.preventDefault();
-                    let bgPaperEl = document.getElementById('bgpaper')
+                    let bgPaperEl = document.getElementById('bgpaper');
 
                     // Extend height to fit
                     // We do this manually so that removing elements and creating new ones doesn't
@@ -241,13 +241,30 @@
                             bgPaperEl.src = bigBgPaper;
                         }
                     } else {
+                        let optionalnakd = "";
+                        if (section.includes("lifedrawing")) {
+                            optionalnakd = section.substring(10);
+                            console.log(optionalnakd);
+                            section = "lifedrawing";
+                        }
                         try {
                             var sectionEl = document.getElementById(section);
                             showAfter(200.0, sectionEl);
                             if (additionalSectionNames[section] == "big") {
-                                bgPaperEl.src = bigBgPaper
+                                bgPaperEl.src = bigBgPaper;
                             } else if (additionalSectionNames[section] == "lil") {
-                                bgPaperEl.src = lilBgPaper
+                                bgPaperEl.src = lilBgPaper;
+                            }
+                            if (optionalnakd == 'nothx') {
+                                let nakdPics = document.getElementsByClassName('nakd');
+                                for (let i=0; i< nakdPics.length; i++) {
+                                    nakdPics[i].classList.add("invisible");
+                                }
+                            } else if (optionalnakd == 'yes') {
+                                let nakdPics = document.getElementsByClassName('nakd');
+                                for (let i=0; i< nakdPics.length; i++) {
+                                    showAfter(0.0, nakdPics[i]);
+                                }
                             }
                         }
                         catch {
@@ -256,7 +273,7 @@
 
                     // Tell the story where to go next
                     story.ChooseChoiceIndex(choice.index);
-                    console.log(choice.index)
+                    console.log(choice.index);
 
                     // This is where the save button will save from
                     savePoint = story.state.toJson();
