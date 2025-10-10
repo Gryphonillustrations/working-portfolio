@@ -156,6 +156,12 @@ img {
   margin-right: -2vw;
 }
 
+.lifeimg {
+    max-width: 400px;
+    display: inline-block;
+    width: 85vw;
+}
+
 /*.squarepaper {
   width: 94%;
   margin-left: auto;
