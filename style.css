@@ -4,6 +4,16 @@ img {
 }
 
 .backdrop {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: block;
+    background-image: url("images/weepingquicksmallblurred.png");
+    background-size: cover;
+    z-index: -2;
+}
+
+/*.backdropimg {
     position: fixed;
     width: 100%;
     z-index: -2;
@@ -14,7 +24,7 @@ img {
     height: 100%;
     backdrop-filter: blur(4px);
     z-index: -1;
-}
+}*/
 
 .backspace {
     padding-top:2.5em;
@@ -30,6 +40,7 @@ img {
   max-width: 88%;
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 12%;
 }
 
 .papermain {
@@ -225,7 +236,10 @@ h3 {
     padding-bottom: 3em;
 }
 
-
+.subtitle {
+    font-style: italic;
+    font-size: 12pt;
+}
 
 @media screen and (prefers-reduced-motion: no-preference) {
     .written-in-ink {
