@@ -236,8 +236,10 @@
                         //let additionalEls = addDivEl.children
                         for (let i=0; i<sectNames.length; i++) {
                             let additionalEl = document.getElementById(sectNames[i]);
-                            additionalEl.classList.add("invisible");
-                            choiceEl.innerHTML = "<br>";
+                            try {
+                                additionalEl.classList.add("invisible");
+                                choiceEl.innerHTML = "<br>";
+                            } catch{}
                             bgPaperEl.src = bigBgPaper;
                             showAfter(0.0,document.getElementById("banjo"));
                         }
