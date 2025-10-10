@@ -108,6 +108,13 @@ img {
     display: block;
 }
 
+.life {
+    width: 100%;
+    position: absolute;
+    top: 21em;
+    margin-left: -6%;
+    display: block;
+}
 
 /*.grid {
     display: flex;
