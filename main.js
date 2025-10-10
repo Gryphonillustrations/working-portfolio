@@ -20,17 +20,17 @@
     savePoint = story.state.toJson();
 
     var additionalSectionNames = {
-        'animreel': 'stay',
+        'animreel': 'sticky',
         'paintings': 'big',
         'digital': 'big',
-        'lifedrawing': 'stay'
+        'lifedrawing': 'sticky'
     };
 
     var bigBgPaper = "images/bigbgpaper.png";
     var lilBgPaper = "images/lilbgpaper.png";
     var tallBgPaper = "images/tallbgpaper.png";
 
-    var windowWidth = window.matchMedia("(max-width: 700px)");
+    var windowWidth = window.matchMedia("(max-width: 450px)");
 
     setMobilePaper(windowWidth);
 
@@ -252,9 +252,10 @@
                                 additionalEl.classList.add("invisible");
                                 choiceEl.innerHTML = "<br>";
                             } catch{}
-                            setMobilePaper(windowWidth, additionalSectionNames[section])
-                            showAfter(0.0,document.getElementById("banjo"));
                         }
+                        setMobilePaper(windowWidth, "big")
+                        showAfter(0.0,document.getElementById("banjo"));
+                        
                     } else {
                         let optionalnakd = "";
                         if (section.includes("lifedrawing")) {
