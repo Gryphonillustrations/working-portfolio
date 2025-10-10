@@ -30,7 +30,7 @@
     var lilBgPaper = "images/lilbgpaper.png";
     var tallBgPaper = "images/tallbgpaper.png";
 
-    var windowWidth = window.matchMedia("(max-width: 450px)");
+    var windowWidth = window.matchMedia("(max-width: 550px)");
 
     setMobilePaper(windowWidth);
 
