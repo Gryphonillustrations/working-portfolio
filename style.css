@@ -1,12 +1,12 @@
 
-@media (min-width: 650px) and (max-width: 980px) {
+@media only screen and (min-width: 650px) and (max-width: 980px) {
   .paintings {
     top: auto;
   }
 }
 
 
-@media (min-width: 370px) and (max-width: 980px) {
+@media only screen and (min-width: 370px) and (max-width: 980px) {
   .p {
     font-size: 10pt;
   }
@@ -17,8 +17,6 @@
     top: auto;
   }
 }
-
-
 
 img {
     display: block;
@@ -143,7 +141,7 @@ img {
 .paintings {
     width: 100%;
     position: absolute;
-    top: 48%;
+    top: 56%;
     margin-left: -6%;
     display: block;
 }
