@@ -101,14 +101,13 @@ img {
 }
 
 .animreel {
-    padding-top: 3em;
     width: 70%;
     margin-right: auto;
     margin-left: auto;
     font-size: 18pt;
     max-height: 400px;
     height: 500px;
-    top: 17%;
+    top: 26%;
     position: absolute;
     display: block;
     left: 16.5%
