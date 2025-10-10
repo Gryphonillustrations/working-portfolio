@@ -176,7 +176,7 @@
 
             var choiceEl;
 
-            if (choice.text.includes("back")) {
+            if (choice.text.includes("go back")) {
                 isBack = true;
             }
             if (isBack) {
