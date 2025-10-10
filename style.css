@@ -479,4 +479,10 @@ img {
   .paintings {
     top: auto;
   }
+  .backspace {
+    padding-top: 1em;
+  }
+  .papermain {
+    margin-top: 0.5em;
+  }
 }
