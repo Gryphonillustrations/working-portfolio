@@ -8,8 +8,10 @@ img {
     width: 100%;
 }
 .blur {
-  height: 100%;
-  backdrop-filter: blur(4px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
 }
 
 .backspace {
@@ -37,6 +39,7 @@ img {
   width: 100%;
   max-width: 910px;
   max-height: 740px;
+  font-size: 18pt;
 }
 
 .paperheight {
@@ -82,22 +85,24 @@ img {
 }
 
 .animreel {
-    padding-top: 10%;
-    width: 80%;
+    padding-top: 3em;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
-    font-size: 2vw;
-    max-height: 740px;
+    font-size: 18pt;
+    max-height: 400px;
     height: 500px;
-    top: 9%;
+    top: 17%;
     position: absolute;
     display: block;
+    left: 16.5%
     
 }
 
 .reel {
     width:100%;
     height: 42vw;
+    max-height: 400px;
 }
 
 .paintings {
