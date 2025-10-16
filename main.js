@@ -32,11 +32,11 @@
 
     var windowWidth = window.matchMedia("(max-width: 550px)");
 
-    setMobilePaper(windowWidth);
+    //setMobilePaper(windowWidth);
 
-    windowWidth.addEventListener("change", function() {
-        setMobilePaper(windowWidth);
-    })
+    //windowWidth.addEventListener("change", function() {
+        //setMobilePaper(windowWidth);
+    //})
 
 
 
@@ -498,13 +498,13 @@
 */
 
     function setMobilePaper(windowWidth, paperSize) {
-        if (paperSize == "sticky") {
+        /*if (paperSize == "sticky") {
             document.getElementById("bgpaper").src = bigBgPaper;
         } else if (windowWidth.matches) {
             document.getElementById("bgpaper").src = tallBgPaper;
         } else {
             document.getElementById("bgpaper").src = bigBgPaper;
-        }
+        }*/
         //document.getElementById("banjo").classList.add('invisible');
     }
 
