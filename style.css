@@ -11,7 +11,7 @@ img {
     height: 100vh;
     position: fixed;
     display: block;
-    background-image: url("images/assets/backdrop-weeping.webp");
+    background-image: url("images/weepingquicksmallblurred.png");
     background-size: cover;
     z-index: -2;
 }
