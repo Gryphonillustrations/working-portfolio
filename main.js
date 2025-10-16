@@ -42,6 +42,7 @@
     try {
         let savedState = window.localStorage.getItem('save-state');
         if (savedState) {
+            console.log("Got a Save!")
             story.state.LoadJson(savedState);
             loadStoryAtFront();
         }
@@ -558,18 +559,22 @@
         for (let i=0; i<story.currentChoices.length; i++) {
             let choice = story.currentChoices[i];
             if (choice.text.includes("back")) {
+                console.log("Found a back button, we gonna 'click' it");
                 story.ChooseChoiceIndex(choice.index);
                  // Set save point
+                 console.log("chose it");
                     savePoint = story.state.toJson();
                     //Save page
                     savePage();
                     done = true;
                     // Aaand loop
+                    console.log("continuing story")
                     continueStory();
                     break;
             }
         }
         if (done == false) {
+            console.log("no back button found, continuing as per usual!")
             continueStory();
         }
     }
