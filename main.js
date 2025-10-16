@@ -226,6 +226,9 @@
                 if (section == "home") {
                     isBack = true;
                 }
+                if (choice.text.includes("back")) {
+                    isBack = true;
+                }
                 
                 var choiceParagraphElement = document.createElement('p');
                 choiceParagraphElement.classList.add("choice");
