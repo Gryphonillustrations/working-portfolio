@@ -558,6 +558,7 @@
 
     function loadStoryAtFront() {
         let done = false;
+        console.log(story.currentChoices)
         for (let i=0; i<story.currentChoices.length; i++) {
             let choice = story.currentChoices[i];
             console.log(choice.text)
