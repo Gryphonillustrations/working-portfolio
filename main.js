@@ -38,7 +38,6 @@
     //})
 
 
-    console.log("HELLO?????")
     try {
         let savedState = window.localStorage.getItem('save-state');
         if (savedState) {
@@ -561,6 +560,7 @@
         let done = false;
         for (let i=0; i<story.currentChoices.length; i++) {
             let choice = story.currentChoices[i];
+            console.log(choice.text)
             if (choice.text.includes("back")) {
                 console.log("Found a back button, we gonna 'click' it");
                 story.ChooseChoiceIndex(choice.index);
