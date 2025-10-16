@@ -38,13 +38,16 @@
     //})
 
 
-
+    console.log("HELLO?????")
     try {
         let savedState = window.localStorage.getItem('save-state');
         if (savedState) {
             console.log("Got a Save!")
             story.state.LoadJson(savedState);
             loadStoryAtFront();
+        } else {
+            console.log("NO SAVE OK???");
+            continueStory(true);
         }
     } catch (e) {
         console.debug("Couldn't load save state");
