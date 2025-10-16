@@ -11,34 +11,9 @@ img {
     height: 100vh;
     position: fixed;
     display: block;
-    background-image: url("images/weepingquicksmallblurred.png");
+    background-image: url("images/assets/backdrop-weeping.webp");
     background-size: cover;
     z-index: -2;
-}
-
-.sizedpaper {
-    height: 80%;
-}
-.centerpaper {
-    background-image: url("images/assets/centerpaper.webp");
-    background-size: 100%;
-    max-width: 907px;
-    width: 100%;
-    margin-top: 7%;
-    padding-bottom: 2%;
-    margin-bottom: -2%;
-    position: relative;
-    
-}
-
-.bottompaper {
-    position: relative;
-    bottom: 0%;
-}
-
-.toppaper {
-    position: absolute;
-    top: 0%;
 }
 
 /*.backdropimg {
@@ -58,6 +33,8 @@ img {
     padding-top:2.5em;
 }
 
+
+
 .goback a {
   text-align: center;
   color: white;
@@ -73,7 +50,7 @@ img {
 
 .papermain {
   position: relative;
-  display: inline-block;
+  display: grid;
   margin-right: auto;
   margin-left: auto;
   margin-top: 1em;
@@ -81,14 +58,7 @@ img {
   max-width: 907px;
   max-height: 740px;
   font-size: 18pt;
-}
-
-.paperheight {
-    width: 100%;
-    height: 60vw;
-    overflow: clip;
-    max-height: 736px;
-    display: block;
+  height: fit-content;
 }
 
 .img100 {
@@ -97,13 +67,9 @@ img {
 
 .papertext {
   text-wrap: wrap;
-  padding-top: 7%;
-  height: 87%;
   text-align: center;
-  position: absolute;
   display: block;
   width: 100%;
-  top: 0px;
 }
 
 .banjo {
@@ -113,6 +79,7 @@ img {
   float: left;
   margin-top: -24%;
   margin-left: -10%;
+  z-index: 1;
 }
 
 .additional-sections {
@@ -147,9 +114,9 @@ img {
 
 .paintings {
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 50%;
-    margin-left: -6%;
+    /*margin-left: -6%;*/
     display: block;
 }
 
@@ -217,6 +184,32 @@ img {
   margin: auto;
 }*/
 
+/*  3 slice paper:  */ 
+
+.centerpaper {
+    background-image: url("images/assets/centerpaper.png");
+    background-size: 100%;
+    max-width: 907px;
+    margin-top: 7%;
+    padding-bottom: 2%;
+    margin-bottom: -2%;
+    
+}
+
+.bottompaper {
+    position: relative;
+    bottom: 36%;
+    z-index: 1;
+}
+
+.toppaper {
+    position: absolute;
+    top: 0%;
+    z-index: -1;
+}
+
+
+
 /* Inky: */
 
 body {
@@ -267,14 +260,14 @@ h3 {
     font-style: italic;
     font-size: 12pt;
 }
-
+/* 
 @media screen and (prefers-reduced-motion: no-preference) {
     .written-in-ink {
         transition: color 0.6s, background 0.6s;
     }
 }
 
-/* 
+
   Enables <iframe> support work on itch.io when using mobile iOS
 
 .outerContainer {
@@ -304,17 +297,17 @@ h3 {
 
 .container {
     display: block;
-    max-width: 907px;
+    max-width: 910px;
     width: 82%;
     margin: 0 auto;
 }
-
+/* 
 @media screen and (prefers-reduced-motion: no-preference) {
     .switched .container {
         transition: background-color 0.6s;
     }
 }
-
+*/
 p {
     font-family: "Raleway";
     font-size: 16pt;
@@ -414,6 +407,13 @@ img {
     /*font-size: 1.8vw;*/
 }
 
+.bottomaligned {
+    position: absolute;
+    bottom: 1%;
+    right: 7%;
+    margin-left: 12%;
+    text-align: right;
+}
 
 #controls {
     display: none;
@@ -479,6 +479,9 @@ img {
   .paintings {
     top: auto;
   }
+  .papermain {
+    height: 70vw;
+  }
 }
 
 
@@ -509,5 +512,6 @@ img {
   }
   .papermain {
     margin-top: 0.5em;
+    height: auto;
   }
 }
