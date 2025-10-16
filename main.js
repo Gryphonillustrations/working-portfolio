@@ -50,12 +50,23 @@
         }
     } catch (e) {
         console.debug("Couldn't load save state");
+        
         continueStory(true);
     }
 
 
-     // Kick off the start of the story!
-    
+    function loadToHome() {
+        while(story.canContinue) {
+            // Get ink to generate the next paragraph
+            var paragraphText = story.Continue();
+            console.log(paragraphText);
+        }
+        story.currentChoices.forEach(function(choice) {
+            console.log(choice.text);
+        });
+        console.log("YES?????")
+        continueStory()
+    }
 
     // Main story processing function. Each time this is called it generates
     // all the next content up as far as the next set of choices.
@@ -559,7 +570,8 @@
     function loadStoryAtFront() {
         let done = false;
         console.log(story.currentChoices)
-        for (let i=0; i<story.currentChoices.length; i++) {
+        loadToHome();
+        /*for (let i=0; i<story.currentChoices.length; i++) {
             let choice = story.currentChoices[i];
             console.log(choice.text)
             if (choice.text.includes("back")) {
@@ -580,7 +592,7 @@
         if (done == false) {
             console.log("no back button found, continuing as per usual!")
             continueStory();
-        }
+        }*/
     }
 
     // Detects which theme (light or dark) to use
