@@ -43,15 +43,16 @@
         if (savedState) {
             console.log("Got a Save!")
             story.state.LoadJson(savedState);
-            loadStoryAtFront();
+            continueStory(true);
+            //loadStoryAtFront();
         } else {
             console.log("NO SAVE OK???");
-            continueStory(true);
+            continueStory();
         }
     } catch (e) {
         console.debug("Couldn't load save state");
         
-        continueStory(true);
+        continueStory();
     }
 
 
@@ -70,11 +71,11 @@
 
     // Main story processing function. Each time this is called it generates
     // all the next content up as far as the next set of choices.
-    function continueStory(firstTime) {
+    function continueStory(fromLoad) {
         var delay = 0.0;
 
         // Don't over-scroll past new content
-        var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
+        //var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
 
         // Generate story text - loop through available content
         while(story.canContinue) {
@@ -329,6 +330,9 @@
                     // Aaand loop
                     continueStory();
                 });
+                if (fromLoad && isBack) {
+                    choiceAnchorEl.click()
+                }
             }
         });
 
