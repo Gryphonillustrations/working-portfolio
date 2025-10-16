@@ -12,9 +12,8 @@
 
     // page features setup
     //setupTheme(globalTagTheme);
-    var hasSave = loadSavePoint();
+    //var hasSave = loadSavePoint();
     //setupButtons(hasSave);
-
 
     // Set initial save point
     savePoint = story.state.toJson();
@@ -26,9 +25,9 @@
         'lifedrawing': 'sticky'
     };
 
-    var bigBgPaper = "images/bigbgpaper.png";
-    var lilBgPaper = "images/lilbgpaper.png";
-    var tallBgPaper = "images/tallbgpaper.png";
+    var bigBgPaper = "images/assets/bigbgpaper.webp";
+    var lilBgPaper = "images/assets/lilbgpaper.webp";
+    var tallBgPaper = "images/assets/tallbgpaper.webp";
 
     var windowWidth = window.matchMedia("(max-width: 550px)");
 
@@ -40,21 +39,28 @@
 
 
 
+    try {
+        let savedState = window.localStorage.getItem('save-state');
+        if (savedState) {
+            story.state.LoadJson(savedState);
+            loadStoryAtFront();
+        }
+    } catch (e) {
+        console.debug("Couldn't load save state");
+        continueStory(true);
+    }
+
+
      // Kick off the start of the story!
-    continueStory(true);
+    
 
     // Main story processing function. Each time this is called it generates
     // all the next content up as far as the next set of choices.
     function continueStory(firstTime) {
-
         var delay = 0.0;
 
         // Don't over-scroll past new content
         var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
-
-        //if (firstTime == false) {
-            //document.getElementById("headertop").style.display = none
-        //}
 
         // Generate story text - loop through available content
         while(story.canContinue) {
@@ -191,13 +197,18 @@
             if (choice.text.includes("go back")) {
                 isBack = true;
             }
+            if (section == "bottomhome") {
+                isBack = true;
+                customClasses.push("bottomaligned");
+                section = "home";
+            }
             if (isBack) {
                 var backEl = document.getElementById("goback");
                 if (!backEl.innerText.includes("back")) {
                     showAfter(delay, backEl);
                     delay += 200.0;
                 }
-                backEl.innerHTML = `<a href='#'>${choice.text}</a>`;
+                backEl.innerHTML = `<a href='#home'>${choice.text}</a>`;
                 choiceEl = backEl;
             } else {
                 var choiceParagraphElement = document.createElement('p');
@@ -206,9 +217,9 @@
 
                 for(var i=0; i<customClasses.length; i++)
                     choiceParagraphElement.classList.add(customClasses[i]);
-
+                    
                 if(isClickable){
-                    choiceParagraphElement.innerHTML = `<a href='#'>▷ ${choice.text}</a>`;
+                    choiceParagraphElement.innerHTML = `<a href='#${section}'>▷ ${choice.text}</a>`;
                 }else{
                     choiceParagraphElement.innerHTML = `<span class='unclickable'>▷ ${choice.text}</span>`;
                 }
@@ -229,10 +240,6 @@
                 var choiceAnchorEl = choiceEl.querySelectorAll("a")[0];
                 choiceAnchorEl.addEventListener("click", function(event) {
 
-                    // Don't follow <a> link
-                    event.preventDefault();
-                    let bgPaperEl = document.getElementById('bgpaper');
-
                     // Extend height to fit
                     // We do this manually so that removing elements and creating new ones doesn't
                     // cause the height (and therefore scroll) to jump backwards temporarily.
@@ -247,11 +254,16 @@
                         let sectNames = Object.getOwnPropertyNames(additionalSectionNames); //bgpaper
                         //let additionalEls = addDivEl.children
                         for (let i=0; i<sectNames.length; i++) {
-                            let additionalEl = document.getElementById(sectNames[i]);
+                            let additionalEl = document.getElementById("div-" + sectNames[i]);
                             try {
                                 additionalEl.classList.add("invisible");
                                 choiceEl.innerHTML = "<br>";
                             } catch{}
+                        }
+                        if (!isBack) {
+                            // Don't follow <a> link
+                            event.preventDefault();
+                            document.getElementById("goback").innerHTML = "<br>";
                         }
                         setMobilePaper(windowWidth, "big")
                         showAfter(0.0,document.getElementById("banjo"));
@@ -263,8 +275,15 @@
                             console.log(optionalnakd);
                             section = "lifedrawing";
                         }
+                        let sectNames = Object.getOwnPropertyNames(additionalSectionNames); //bgpaper
+                        for (let i=0; i<sectNames.length; i++) {
+                            let additionalEl = document.getElementById("div-" + sectNames[i]);
+                            try {
+                                additionalEl.classList.add("invisible");
+                            }catch{}
+                        }
                         try {
-                            var sectionEl = document.getElementById(section);
+                            var sectionEl = document.getElementById("div-" + section);
                             setMobilePaper(windowWidth, additionalSectionNames[section])
                             showAfter(200.0, sectionEl);
                             
@@ -286,10 +305,12 @@
 
                     // Tell the story where to go next
                     story.ChooseChoiceIndex(choice.index);
-                    console.log(choice.index);
+                    //console.log(choice.index);
 
-                    // This is where the save button will save from
+                    // Set save point
                     savePoint = story.state.toJson();
+                    //Save page
+                    savePage();
 
                     // Aaand loop
                     continueStory();
@@ -332,7 +353,15 @@
     }
 
 
-
+    function savePage() {
+        try {
+                window.localStorage.setItem('save-state', savePoint);
+                //document.getElementById("reload").removeAttribute("disabled");
+                console.log("Page saved!");
+        } catch (e) {
+                console.warn("Couldn't save page :(");
+        }
+    }
 
 
     function restart() {
@@ -524,6 +553,27 @@
         return false;
     }
 
+    function loadStoryAtFront() {
+        let done = false;
+        for (let i=0; i<story.currentChoices.length; i++) {
+            let choice = story.currentChoices[i];
+            if (choice.text.includes("back")) {
+                story.ChooseChoiceIndex(choice.index);
+                 // Set save point
+                    savePoint = story.state.toJson();
+                    //Save page
+                    savePage();
+                    done = true;
+                    // Aaand loop
+                    continueStory();
+                    break;
+            }
+        }
+        if (done == false) {
+            continueStory();
+        }
+    }
+
     // Detects which theme (light or dark) to use
    /* function setupTheme(globalTagTheme) {
 
@@ -545,7 +595,9 @@
     }*/
 
 
-
+function buttons() {
+    
+}
 /*
     // Used to hook up the functionality for global functionality buttons
     function setupButtons(hasSave) {
