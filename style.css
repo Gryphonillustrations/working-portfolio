@@ -16,6 +16,28 @@ img {
     z-index: -2;
 }
 
+.centerpaper {
+    background-image: url("images/assets/centerpaper.webp");
+    background-size: 100%;
+    max-width: 907px;
+    width: 100%;
+    margin-top: 7%;
+    padding-bottom: 2%;
+    margin-bottom: -2%;
+    position: relative;
+    
+}
+
+.bottompaper {
+    position: relative;
+    bottom: 0%;
+}
+
+.toppaper {
+    position: absolute;
+    top: 0%;
+}
+
 /*.backdropimg {
     position: fixed;
     width: 100%;
@@ -53,7 +75,7 @@ img {
   margin-left: auto;
   margin-top: 1em;
   width: 100%;
-  max-width: 910px;
+  max-width: 907px;
   max-height: 740px;
   font-size: 18pt;
 }
@@ -279,7 +301,7 @@ h3 {
 
 .container {
     display: block;
-    max-width: 910px;
+    max-width: 907px;
     width: 82%;
     margin: 0 auto;
 }
