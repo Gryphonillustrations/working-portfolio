@@ -16,6 +16,9 @@ img {
     z-index: -2;
 }
 
+.sizedpaper {
+    height: 80%;
+}
 .centerpaper {
     background-image: url("images/assets/centerpaper.webp");
     background-size: 100%;
