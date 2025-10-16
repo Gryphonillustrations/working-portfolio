@@ -211,13 +211,6 @@
 
             if (choice.text.includes("go back")) {
                 isBack = true;
-            }
-            if (section == "bottomhome") {
-                isBack = true;
-                customClasses.push("bottomaligned");
-                section = "home";
-            }
-            if (isBack) {
                 var backEl = document.getElementById("goback");
                 if (!backEl.innerText.includes("back")) {
                     showAfter(delay, backEl);
@@ -226,9 +219,17 @@
                 backEl.innerHTML = `<a href='#home'>${choice.text}</a>`;
                 choiceEl = backEl;
             } else {
+                if (section == "bottomhome") {
+                    customClasses.push("bottomaligned");
+                    section = "home";
+                }
+                if (section == "home") {
+                    isBack = true;
+                }
+                
                 var choiceParagraphElement = document.createElement('p');
                 choiceParagraphElement.classList.add("choice");
-                choiceParagraphElement.classList.add("notback");
+                if (!isBack) choiceParagraphElement.classList.add("notback");
 
                 for(var i=0; i<customClasses.length; i++)
                     choiceParagraphElement.classList.add(customClasses[i]);
@@ -244,6 +245,7 @@
                 showAfter(delay, choiceParagraphElement);
                 delay += 200.0;
                 choiceEl = choiceParagraphElement;
+                
             }
 
 
@@ -340,7 +342,7 @@
 		storyContainer.style.height = "";
 
 
-		//make em have our images that alternate <3
+		/*//make em have our images that alternate <3
 		let choiceElementList = document.getElementsByClassName("choice")
         if (choiceElementList.length == 1) {
                 choiceElementList[0].className += " choicesolo lastchoice"
@@ -361,9 +363,9 @@
 
                 /*if (i == choiceElementList.length - 1) {
                     choiceElementList[i].className += " lastchoice"
-                }*/
+                }/
             }
-        }
+        }*/
 
 
 
